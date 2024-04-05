@@ -1,0 +1,6 @@
+br\unigran\model\Task.class
+br\unigran\persistencia\Dados.class
+br\unigran\atividadeprova\AtividadeProva.class
+br\unigran\view\Login.class
+br\unigran\view\JText.class
+br\unigran\model\User.class
