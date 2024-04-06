@@ -1,8 +1,10 @@
 package br.unigran.view;
 
+import br.unigran.persistencia.Dados;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,7 +16,7 @@ import javax.swing.JTextField;
 public class Login extends JFrame {
     private JPanel painel1;
    
-    private JButton confirmar;
+    private JButton logar;
     private JButton cadastrar;
     private JTextField login;
     private JLabel loginLabel;
@@ -22,6 +24,7 @@ public class Login extends JFrame {
     private JLabel senhaLabel;
     private JTable tabela = new JTable(10, 2);
     private JScrollPane scroll;
+    private List teste;
     
     public Login() {
         alocaComponentes();
@@ -45,18 +48,24 @@ public class Login extends JFrame {
         painel1.add(senhaLabel);
         painel1.add(senha);
         
-        confirmar = new JButton("Logar");
+        logar = new JButton("Logar");
         cadastrar = new JButton("Cadastrar");
         
-        painel1.add(confirmar);
+        painel1.add(logar);
         painel1.add(cadastrar);
         
         add(painel1,BorderLayout.PAGE_START);
         
     }
     private void acoes() {
-        confirmar.addActionListener((ActionEvent e) -> {
-            Object singleResult = em.createQuery("select O from Usuario O " + "where O.login=? and O.senha =:senha").setParameter("login", u.getLogin()).setParameter("senha",u.getSenha()).getSingleResult();
+        logar.addActionListener((ActionEvent e) -> {
+           Dados dados = new Dados();
+           teste = dados.Login("*", "User", "");
+           System.out.println(teste);
+        });
+        cadastrar.addActionListener((ActionEvent e) -> {
+           Register register = new Register();
+           register.setVisible(true);
        });
     }
     private void configuracoes() {

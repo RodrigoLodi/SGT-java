@@ -38,8 +38,9 @@ public class Dados {
                 .getResultList();
     }
     
-    public void Login() {
-        Object singleResult = em.createQuery("select O from Usuario O " + "where O.login=? and O.senha =:senha").setParameter("login", u.getLogin()).setParameter("senha",u.getSenha()).getSingleResult();
+    public List Login(String campos, String tabela, String condicao) {
+        return em.createNativeQuery("select " + campos + " from " + tabela + " " + condicao)
+                .getResultList();
     }
     
 }
