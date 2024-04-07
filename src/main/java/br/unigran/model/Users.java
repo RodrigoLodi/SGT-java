@@ -20,7 +20,7 @@ public class Users implements Serializable {
     private String mail;
     @Column(name = "password", length = 150)
     private char[] password;
-    @OneToMany(targetEntity = Task.class)
+    //@OneToMany(targetEntity = Task.class)
     private Task task;
 
     public String getName() {

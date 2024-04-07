@@ -53,5 +53,9 @@ public class Menu extends JFrame {
             Register register = new Register();
             register.setVisible(true);
         });
+        btnRegisterTasks.addActionListener((ActionEvent e) -> {
+           CreateTask createtask = new CreateTask();
+           createtask.setVisible(true);
+        });
     }
 }

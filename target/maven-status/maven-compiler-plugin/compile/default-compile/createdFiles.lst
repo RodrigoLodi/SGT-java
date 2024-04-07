@@ -1,7 +1,11 @@
+br\unigran\screen\Menu.class
 br\unigran\model\Task.class
 br\unigran\persistencia\Dados.class
 br\unigran\atividadeprova\AtividadeProva.class
-br\unigran\view\Login.class
-br\unigran\view\Register.class
-br\unigran\view\JText.class
-br\unigran\model\User.class
+br\unigran\model\Task_.class
+br\unigran\screen\Login.class
+br\unigran\model\Users.class
+br\unigran\screen\CreateTask.class
+br\unigran\screen\Register.class
+br\unigran\model\Users_.class
+br\unigran\screen\JText.class

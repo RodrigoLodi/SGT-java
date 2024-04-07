@@ -1,6 +1,7 @@
 package br.unigran.model;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,6 @@ public class Task {
     private String priority;
     @Column(name = "status")
     private boolean status;
-    @Column(name = "task")
     private Users userTask;
 
     public Users getUserTask() {
@@ -33,7 +33,7 @@ public class Task {
     public void setUserTask(Users userTask) {
         this.userTask = userTask;
     }
-
+    
     public Integer getId() {
         return id;
     }
