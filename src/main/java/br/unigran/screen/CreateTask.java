@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
+import com.toedter.calendar.JCalendar;
+import java.awt.*;
+
 import javax.swing.*;
 
 public class CreateTask extends JFrame {
@@ -76,6 +79,8 @@ public class CreateTask extends JFrame {
         leftTopInnerPanel.add(priority);
         leftTopInnerPanel.add(labelUser);
         leftTopInnerPanel.add(BoxUser);
+        leftTopInnerPanel.add(lPriority);
+        leftTopInnerPanel.add(priority);
         leftTopPanel.add(leftTopInnerPanel, BorderLayout.NORTH);
         topPanel.add(leftTopPanel);
 
