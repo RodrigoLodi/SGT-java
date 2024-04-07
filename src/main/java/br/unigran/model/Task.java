@@ -2,11 +2,13 @@ package br.unigran.model;
 
 import java.util.Date;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +23,16 @@ public class Task {
     private String priority;
     @Column(name = "status")
     private boolean status;
+    @Column(name = "task")
+    private Users userTask;
+
+    public Users getUserTask() {
+        return userTask;
+    }
+
+    public void setUserTask(Users userTask) {
+        this.userTask = userTask;
+    }
 
     public Integer getId() {
         return id;
