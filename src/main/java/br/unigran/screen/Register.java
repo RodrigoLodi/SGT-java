@@ -1,4 +1,4 @@
-package br.unigran.view;
+package br.unigran.screen;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

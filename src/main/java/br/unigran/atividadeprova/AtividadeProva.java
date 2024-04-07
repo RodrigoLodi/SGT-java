@@ -1,6 +1,6 @@
 package br.unigran.atividadeprova;
 
-import br.unigran.view.Login;
+import br.unigran.screen.Login;
 
 public class AtividadeProva {
 

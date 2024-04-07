@@ -1,4 +1,4 @@
-package br.unigran.view;
+package br.unigran.screen;
 
 import br.unigran.persistencia.Dados;
 import java.awt.BorderLayout;
