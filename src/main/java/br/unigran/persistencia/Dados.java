@@ -1,6 +1,7 @@
 package br.unigran.persistencia;
 
-import br.unigran.model.User;
+import br.unigran.model.Task;
+import br.unigran.model.Users;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -29,17 +30,25 @@ public class Dados {
         em.remove(o);
         etx.commit();
     }
-    public List listar(){
-        return em.createNativeQuery("select * from User p",User.class)
-                .getResultList();
+   public List listarUsers(String condicao) {
+        String queryString = "SELECT * FROM Users";
+        if (condicao != null && !condicao.isEmpty()) {
+            queryString += " WHERE " + condicao;
+        }
+        return em.createNativeQuery(queryString, Users.class)
+                 .getResultList();
     }
+   
+   public List listarTask(String condicao) {
+       String queryString = "SELECT * FROM Task";
+       if (condicao != null && !condicao.isEmpty()) {
+           queryString += " WHERE " + condicao;
+       }
+       return em.createNativeQuery(queryString, Task.class)
+               .getResultList();
+   }
     public List listarOO(){
-        return em.createNativeQuery("select p from User p")
-                .getResultList();
-    }
-    
-    public List Login(String campos, String tabela, String condicao) {
-        return em.createNativeQuery("select " + campos + " from " + tabela + " " + condicao)
+        return em.createNativeQuery("select p from Users p")
                 .getResultList();
     }
     
