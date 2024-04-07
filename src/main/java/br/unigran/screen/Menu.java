@@ -3,6 +3,7 @@ package br.unigran.screen;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 
@@ -18,8 +19,8 @@ public class Menu extends JFrame {
     
     public Menu(){
         config();
-        componetns();
-        
+        components();
+        acoes();
     }
     
     public void config(){
@@ -30,8 +31,8 @@ public class Menu extends JFrame {
         
     }
     
-    private void componetns(){
-         setLayout(new BorderLayout());
+    private void components(){
+        setLayout(new BorderLayout());
         data = new JTextArea();
         scroll = new JScrollPane(data);
         add(scroll,BorderLayout.CENTER);
@@ -47,7 +48,10 @@ public class Menu extends JFrame {
         add(panel, BorderLayout.PAGE_END);
     }
     
-        public static void main(String[] args) {
-        new Menu().setVisible(true);
+    private void acoes() {
+        btnUserRegistration.addActionListener((ActionEvent e) -> {
+            Register register = new Register();
+            register.setVisible(true);
+        });
     }
 }
