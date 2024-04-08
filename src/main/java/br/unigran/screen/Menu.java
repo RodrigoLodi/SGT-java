@@ -57,5 +57,9 @@ public class Menu extends JFrame {
            CreateTask createtask = new CreateTask();
            createtask.setVisible(true);
         });
+        btnViewTasks.addActionListener((ActionEvent e) -> {
+           ViewTask viewtask = new ViewTask();
+           viewtask.setVisible(true);
+        });
     }
 }

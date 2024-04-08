@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Task {
@@ -18,12 +19,13 @@ public class Task {
     private String title;
     @Column(name = "description", length = 250)
     private String description;
-    @Column(name = "date")
+    @Column(name = "dateTask")
     private Date date;
     @Column(name = "priority", length = 20)
     private String priority;
     @Column(name = "status")
     private boolean status;
+    @ManyToOne
     private Users userTask;
 
     public Users getUserTask() {
@@ -33,6 +35,7 @@ public class Task {
     public void setUserTask(Users userTask) {
         this.userTask = userTask;
     }
+    
     
     public Integer getId() {
         return id;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\model\Task.java
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\screen\Menu.java
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\screen\CreateTask.java
@@ -8,14 +7,4 @@ C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\un
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\screen\Login.java
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\model\Users.java
 C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\screen\JText.java
-=======
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\model\User.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\model\Task.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\screen\Login.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\screen\CreateTask.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\atividadeprova\AtividadeProva.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\persistencia\Dados.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\screen\JText.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\screen\Menu.java
-C:\Users\kelvy\trabalho\SGT-java\src\main\java\br\unigran\screen\Register.java
->>>>>>> 0a702f6dad1ed5cf0a237f39b81b37b2d2e8d9e0
+C:\Users\rodri\OneDrive\Documentos\NetBeansProjects\SGT-java\src\main\java\br\unigran\screen\ViewTask.java

@@ -122,15 +122,17 @@ public class CreateTask extends JFrame {
             Task task = new Task();
             task.setDate(date.getDate());
             task.setDescription(description.getText());
-            task.setPriority(priority.getPrototypeDisplayValue());
+            task.setPriority((String) priority.getSelectedItem());
             task.setStatus(false);
             task.setTitle(title.getText());
             Dados dados = new Dados();
-            dados.salvar(task);
-            List<Task> listas = dados.listarTask("");
-            for (Task lista : listas) {
-                System.out.println(lista.getDate() + lista.getDescription() + lista.getPriority());
+            List<Users> user = dados.listarUsers("name='" + BoxUser.getSelectedItem() + "'");
+            if (!user.isEmpty()) {
+                task.setUserTask(user.get(0));
             }
+            dados.salvar(task);
+            JOptionPane.showMessageDialog(null, "Task Saved Successfully", "Aviso", JOptionPane.WARNING_MESSAGE);
+            dispose();
        });
        btnSair.addActionListener((ActionEvent e) -> {
            dispose();
