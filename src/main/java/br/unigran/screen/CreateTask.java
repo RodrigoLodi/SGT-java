@@ -4,16 +4,12 @@ import br.unigran.model.Task;
 import br.unigran.model.Users;
 import br.unigran.persistencia.Dados;
 import com.toedter.calendar.JCalendar;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.List;
-import com.toedter.calendar.JCalendar;
-import java.awt.*;
-
-import javax.swing.*;
 
 public class CreateTask extends JFrame {
 
@@ -53,7 +49,7 @@ public class CreateTask extends JFrame {
 
         JPanel leftTopPanel = new JPanel(new BorderLayout());
         leftTopPanel.setBackground(Color.LIGHT_GRAY);
-        JPanel leftTopInnerPanel = new JPanel(new GridLayout(2, 1));
+        JPanel leftTopInnerPanel = new JPanel(new GridLayout(0, 1)); // Alterado para GridLayout com 0 linhas
         leftTopInnerPanel.setBackground(Color.LIGHT_GRAY);
         lTitle = new JLabel("Title:");
         lTitle.setBackground(Color.LIGHT_GRAY);
@@ -61,26 +57,27 @@ public class CreateTask extends JFrame {
         title.setBackground(Color.WHITE);
         leftTopInnerPanel.add(lTitle);
         leftTopInnerPanel.add(title);
+
+        labelUser = new JLabel("User:");
+        Dados dados = new Dados();
+        List<Users> users = dados.listarUsers("");
+        ArrayList<String> lista = new ArrayList<>();
+        for (Users user : users) {
+            lista.add(user.getName());
+        }
+        String[] array = lista.toArray(new String[0]);
+        BoxUser = new JComboBox<>(array);
+        leftTopInnerPanel.add(labelUser);
+        leftTopInnerPanel.add(BoxUser);
+
         lPriority = new JLabel("Priority:");
         lPriority.setBackground(Color.LIGHT_GRAY);
         String[] priorityItems = {"Normal", "Urgent"};
         priority = new JComboBox<>(priorityItems);
         priority.setBackground(Color.WHITE);
-        labelUser = new JLabel("User:");
-        Dados dados = new Dados();
-        java.util.List<Users> users = dados.listarUsers("");
-        ArrayList<String> lista = new ArrayList<>();
-        for (Users user : users) {
-           lista.add(user.getName());
-        }
-        String[] array = lista.toArray(new String[0]);
-        BoxUser = new JComboBox<>(array);
         leftTopInnerPanel.add(lPriority);
         leftTopInnerPanel.add(priority);
-        leftTopInnerPanel.add(labelUser);
-        leftTopInnerPanel.add(BoxUser);
-        leftTopInnerPanel.add(lPriority);
-        leftTopInnerPanel.add(priority);
+
         leftTopPanel.add(leftTopInnerPanel, BorderLayout.NORTH);
         topPanel.add(leftTopPanel);
 
@@ -118,7 +115,7 @@ public class CreateTask extends JFrame {
     }
 
     private void action() {
-       btnSalvar.addActionListener((ActionEvent e) -> {
+        btnSalvar.addActionListener((ActionEvent e) -> {
             Task task = new Task();
             task.setDate(date.getDate());
             task.setDescription(description.getText());
@@ -133,10 +130,9 @@ public class CreateTask extends JFrame {
             dados.salvar(task);
             JOptionPane.showMessageDialog(null, "Task Saved Successfully", "Aviso", JOptionPane.WARNING_MESSAGE);
             dispose();
-       });
-       btnSair.addActionListener((ActionEvent e) -> {
-           dispose();
-       });
+        });
+        btnSair.addActionListener((ActionEvent e) -> {
+            dispose();
+        });
     }
-
 }
