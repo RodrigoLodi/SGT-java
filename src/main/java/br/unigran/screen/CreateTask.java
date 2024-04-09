@@ -49,7 +49,7 @@ public class CreateTask extends JFrame {
 
         JPanel leftTopPanel = new JPanel(new BorderLayout());
         leftTopPanel.setBackground(Color.LIGHT_GRAY);
-        JPanel leftTopInnerPanel = new JPanel(new GridLayout(0, 1)); // Alterado para GridLayout com 0 linhas
+        JPanel leftTopInnerPanel = new JPanel(new GridLayout(0, 1));
         leftTopInnerPanel.setBackground(Color.LIGHT_GRAY);
         lTitle = new JLabel("Title:");
         lTitle.setBackground(Color.LIGHT_GRAY);
