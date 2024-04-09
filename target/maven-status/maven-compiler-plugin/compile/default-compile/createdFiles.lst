@@ -3,7 +3,6 @@ br\unigran\atividadeprova\AtividadeProva.class
 br\unigran\model\Users.class
 br\unigran\screen\Register.class
 br\unigran\model\Users_.class
-br\unigran\screen\JText.class
 br\unigran\screen\Menu.class
 br\unigran\model\Task.class
 br\unigran\persistencia\Dados.class

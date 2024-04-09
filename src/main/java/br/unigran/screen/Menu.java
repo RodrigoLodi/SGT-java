@@ -1,10 +1,13 @@
 package br.unigran.screen;
 
+import br.unigran.model.Task;
 import br.unigran.model.Users;
+import br.unigran.persistencia.Dados;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
+import java.util.List;
 import javax.swing.*;
 
 
@@ -45,6 +48,12 @@ public class Menu extends JFrame {
         btnUserRegistration=new JButton("User Registration");
         btnViewTasks=new JButton("View Tasks");
         //adicionar
+        Dados dados = new Dados();
+        List<Task> task = dados.listarTask("usertask_id=" + usuarioLogado.getId() + " and status<>true");
+        data.setText("Voce tem " + task.size() + " tasks em aberto!\n Tasks:");
+        for (Task tasks : task) {
+            data.setText(data.getText() + "\n" + tasks.getTitle());
+        }
         panel.add(btnRegisterTasks);
         panel.add(btnUserRegistration);
         panel.add(btnViewTasks);
@@ -54,14 +63,17 @@ public class Menu extends JFrame {
     private void acoes() {
         btnUserRegistration.addActionListener((ActionEvent e) -> {
             Register register = new Register();
+            data.setText("");
             register.setVisible(true);
         });
         btnRegisterTasks.addActionListener((ActionEvent e) -> {
            CreateTask createtask = new CreateTask();
+           data.setText("");
            createtask.setVisible(true);
         });
         btnViewTasks.addActionListener((ActionEvent e) -> {
            ViewTask viewtask = new ViewTask(usuarioLogado);
+           data.setText("");
            viewtask.setVisible(true);
         });
     }
