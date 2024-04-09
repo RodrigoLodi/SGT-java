@@ -3,13 +3,10 @@ package br.unigran.screen;
 import br.unigran.model.Users;
 import br.unigran.persistencia.Dados;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.Arrays;
 import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -41,28 +38,29 @@ public class Login extends JFrame {
     }
 
     private void alocaComponentes() {
-        JPanel painel = new JPanel(new GridLayout(4, 4));
-        painel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        painel.setBackground(Color.LIGHT_GRAY);
+        setLayout(new BorderLayout());
+        painel1 = new JPanel(new FlowLayout());
+        painel1.setLayout(new BoxLayout(painel1, BoxLayout.Y_AXIS));
 
-        JPanel botoesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        botoesPanel.add(logar);
-        botoesPanel.add(cadastrar);
-        botoesPanel.setBackground(Color.LIGHT_GRAY);
+        login = new JTextField(150);
+        loginLabel = new JLabel("Email");
 
-        painel.add(loginLabel);
-        painel.add(login);
-        painel.add(senhaLabel);
-        painel.add(senha);
+        senha = new JPasswordField(20);
+        senhaLabel = new JLabel("Senha");
 
-        add(painel, BorderLayout.CENTER);
-        add(botoesPanel, BorderLayout.SOUTH);
+        painel1.add(loginLabel);
+        painel1.add(login);
 
-        setTitle("Login");
-        setSize(300, 200);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
+        painel1.add(senhaLabel);
+        painel1.add(senha);
+
+        logar = new JButton("Logar");
+        cadastrar = new JButton("Cadastrar");
+
+        painel1.add(logar);
+        painel1.add(cadastrar);
+
+        add(painel1,BorderLayout.PAGE_START);
 
     }
     private void acoes() {
