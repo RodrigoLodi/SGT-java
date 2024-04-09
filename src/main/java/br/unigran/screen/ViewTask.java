@@ -36,7 +36,9 @@ public class ViewTask extends JFrame {
             data[i][4] = tasks.get(i).getPriority();
             data[i][5] = tasks.get(i).isStatus();
         }
-        jTable.setModel(new DefaultTableModel(data, colunas));
+        DefaultTableModel model = new DefaultTableModel(data, colunas);
+        jTable.setModel(model);
+        //jTable.setModel(new DefaultTableModel(data, colunas));
         painel.add(jTable);
         add(painel, BorderLayout.PAGE_START);
     }
