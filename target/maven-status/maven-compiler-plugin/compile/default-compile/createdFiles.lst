@@ -7,6 +7,7 @@ br\unigran\screen\JText.class
 br\unigran\screen\Menu.class
 br\unigran\model\Task.class
 br\unigran\persistencia\Dados.class
+br\unigran\screen\ViewTask$1.class
 br\unigran\model\Task_.class
 br\unigran\screen\Login.class
 br\unigran\screen\CreateTask.class

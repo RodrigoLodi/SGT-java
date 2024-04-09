@@ -1,5 +1,6 @@
 package br.unigran.screen;
 
+import br.unigran.model.Users;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -14,10 +15,12 @@ public class Menu extends JFrame {
     private JButton btnRegisterTasks;
     private JButton btnUserRegistration;
     private JButton btnViewTasks;
+    private final Users usuarioLogado;
     
 
     
-    public Menu(){
+    public Menu(Users usuarioLogado){
+        this.usuarioLogado = usuarioLogado;
         config();
         components();
         acoes();
@@ -58,7 +61,7 @@ public class Menu extends JFrame {
            createtask.setVisible(true);
         });
         btnViewTasks.addActionListener((ActionEvent e) -> {
-           ViewTask viewtask = new ViewTask();
+           ViewTask viewtask = new ViewTask(usuarioLogado);
            viewtask.setVisible(true);
         });
     }
